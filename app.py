@@ -66,4 +66,6 @@ with gr.Blocks() as demo:
         insight_box = gr.Textbox(label="", lines=15)
         gr.Button("Show Benefits").click(stakeholder_insights, outputs=insight_box)
 
-demo.launch() 
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 7860))
+    demo.launch(server_name="0.0.0.0", server_port=port)
